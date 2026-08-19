@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 import businessRoutes from "./routes/business.routes.js";
 import customerRoutes from "./routes/customer.routes.js";
-
+import authRoutes from "./routes/auth.routes.js";
 dotenv.config();
 
 const app = express();
@@ -26,6 +26,7 @@ app.get("/health", async (_req, res) => {
 
 app.use("/api/businesses", businessRoutes);
 app.use("/api/customers", customerRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
